@@ -52,11 +52,14 @@ class VLM:
     pixels_per_token: int
 
 
-def load_vlm(model_id: str, dtype: torch.dtype = torch.float16, device: str = "cuda") -> VLM:
+def load_vlm(model_id: str, dtype: torch.dtype = torch.float16, device: str = "cuda",
+             attn_implementation="eager") -> VLM:
+    """attn_implementation: "eager" ya da steer.register_visual_boost() sonrası
+    {"text_config": steer.ATTN_NAME, "vision_config": "eager"}."""
     import transformers
     from transformers import AutoProcessor
 
-    kw = dict(torch_dtype=dtype, attn_implementation="eager", device_map=device)
+    kw = dict(torch_dtype=dtype, attn_implementation=attn_implementation, device_map=device)
     model = None
     for cls_name in ("AutoModelForImageTextToText", "Qwen3VLForConditionalGeneration",
                      "Qwen2_5_VLForConditionalGeneration"):

@@ -80,6 +80,19 @@ Aynısını `--prompt thermal` ve RGB manifest'iyle tekrarla.
     --eval /kaggle/working/runs/ir_free_val --out /kaggle/working/report_ir_free
 ```
 
+## Adım 6 — Düşünme katmanlarına müdahale
+
+Önce 05 raporundan kararın oluştuğu katmanı gör; müdahale katmanını (`--layer`) ona göre seç.
+
+```python
+!python scripts/06_intervene.py --manifest /kaggle/working/crops/manifest_ir.csv \
+    --rgb-manifest /kaggle/working/crops/manifest_rgb.csv --model {M} \
+    --calib 60 --limit 60 --halt 0.05,0.1 --boost 1.5,2.0 --t2r 0.05 \
+    --out /kaggle/working/runs/ir_intervene
+```
+
+Çıktının sonunda her koşul için doğruluk, karar verememe oranı, ortalama token ve süre tablosu yazdırılır. Önce `--calib 10 --limit 5` ile dene.
+
 ## Notlar
 
 - Kaggle oturumu ~12 saatte kapanır. Betikler yarıda kalırsa aynı komutla devam eder, biten örnekleri atlar.

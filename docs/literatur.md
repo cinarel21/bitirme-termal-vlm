@@ -73,6 +73,18 @@ Taramada **termal görüntülerde VLM'lerin mekanistik yorumlamasını yapan bir
 
 31. **MLLMs Know Where to Look (ViCrop)** — ICLR 2025. [arXiv 2502.17422](https://arxiv.org/pdf/2502.17422) — nesne küçüldükçe doğruluk düşüyor; modelin kendi dikkatiyle kırpma doğruluğu artırıyor. **Model "nereye bakacağını biliyor ama göremiyor" bulgusu bizim drone-bölgesi dikkat ölçümümüzle karşılaştırılmalı.**
 
+## H. Düşünmeye müdahale (steering)
+
+36. **Exploring and Exploiting the Inherent Efficiency within Large Reasoning Models (Efficiency Steering)** — [arXiv 2506.15647](https://arxiv.org/pdf/2506.15647) — verimli ve uzun muhakeme aktivasyonlarını ayıran yön; yedi modelde muhakemeyi kısaltıp doğruluğu korumuş. **Durma yönümüzün temel referansı.**
+37. **Mitigating Overthinking via Manifold Steering** — [arXiv 2505.22411](https://arxiv.org/html/2505.22411v1)
+38. **The Halt Vector: Internalizing a Causal Steering Intervention for Efficient Reasoning** — [arXiv 2608.28859](https://arxiv.org/pdf/2608.28859)
+39. **ReBalance: Efficient Reasoning with Balanced Thinking** — [arXiv 2603.12372](https://arxiv.org/abs/2603.12372) — sabit tek yönlü müdahalenin yetersiz düşünmeye yol açabileceği uyarısı; güvene göre ayarlanan güç. Tartışmada ele alınmalı.
+40. **EasySteer** — [arXiv 2509.25175](https://arxiv.org/html/2509.25175v1) — steering çerçevesi; SEAL yöntemini de içeriyor.
+41. **The Ebb and Flow of Multimodal Focus: Visual Relay Windows** — [arXiv 2607.11436](https://arxiv.org/html/2607.11436) — muhakeme sırasında görsel dikkatin zamanlaması.
+42. **MAST: Medoid-Anchored Subspace Steering for Visual Grounding** — [arXiv 2611.15168](https://arxiv.org/pdf/2611.15168)
+43. **Viscot-steer** — [arXiv 2611.11209](https://arxiv.org/pdf/2611.11209) — görsel düşünce zincirinde steering (yalnızca başlık doğrulandı, tam metin okunmalı).
+44. Görsel dikkat güçlendirme uygulaması: Hugging Face [AttentionInterface](https://huggingface.co/docs/transformers/attention_interface) belgesi.
+
 ## G. Veri ve model
 
 32. **Anti-UAV: A Large Multi-Modal Benchmark for UAV Tracking** — [arXiv 2101.08466](https://arxiv.org/abs/2101.08466) · [repo](https://github.com/ZhaoJ9014/Anti-UAV) (MIT). 300'den fazla RGB-IR video çifti.

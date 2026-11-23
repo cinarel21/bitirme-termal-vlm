@@ -12,7 +12,7 @@ Görsel dil modelleri (VLM) bir görüntüye bakıp adım adım düşünerek kar
 | **AS2 — Nereye bakıyor?** | Düşünme ilerledikçe dikkatin görüntüye ve drone bölgesine giden payı nasıl değişiyor? Termal ile RGB arasında fark var mı? | Dikkat payı analizi (drone kutusu → görüntü-token ızgarası) |
 | **AS3 — Neden?** | Karar gerçekten termal kanıttan mı, yoksa dil önyargısından mı geliyor? | Aktivasyon yamalama (drone'u silinmiş görüntü ile) |
 | **AS4 — Kullanım** | Kararın erken oluştuğunu gösteren iç sinyal, gereksiz düşünmeyi kesmek için kullanılabilir mi? | Probe tabanlı erken durdurma, token tasarrufu |
-| **AS5 — Düzeltme** *(bitirme)* | Termale özgü kısa muhakeme şablonu veya görsel dikkatin güçlendirilmesi temellendirmeyi düzeltir mi? | Şablon karşılaştırması, eğitimsiz dikkat müdahalesi |
+| **AS5 — Müdahale** | Düşünme katmanlarına eğitimsiz müdahale ile model daha kısa düşünüp termali daha iyi kullanabilir mi? | Durma yönü (steering), görsel dikkat güçlendirme, termal→RGB temsil kaydırma |
 
 ## Klasör yapısı
 
@@ -23,12 +23,15 @@ src/tvlm/
   data_antiuav.py   Anti-UAV300 okuyucu, pozitif/negatif/silinmiş kırpma üretimi
   vlm.py            model yükleme, bütçe zorlama, logit lens, dikkat payı, aktivasyon yamalama
   probe.py          doğrusal probe ve iç sinyalle erken durdurma
+  steer.py          düşünme katmanlarına müdahale: durma yönü, görsel dikkat güçlendirme, termal->RGB
 scripts/
+  00_smoke_test.py         birkaç görüntüyle hızlı deneme
   01_inspect_dataset.py    veri setinin gerçek yapısını göster
   02_build_crops.py        kırpmaları üret (video düzeyinde bölme korunur)
   03_reason_and_measure.py ana deney: muhakeme + bütçe + logit lens + dikkat + probe özellikleri
   04_patching.py           nedensellik deneyi (aktivasyon yamalama)
   05_analyze.py            özet rapor: B*, karar katmanı, dikkat, probe, erken durdurma
+  06_intervene.py          müdahale deneyleri: doğruluk, token, süre karşılaştırması
 tests/test_core.py         modelden bağımsız birim testleri (CPU)
 docs/                      literatür, deney protokolü, Kaggle rehberi
 ```
