@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+data/
+crops/
+runs/
+reports/
+*.npy
+*.png
+!docs/**/*.png
+.ipynb_checkpoints/

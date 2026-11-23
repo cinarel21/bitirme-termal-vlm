@@ -1,0 +1,9 @@
+torch>=2.3
+transformers>=4.57
+accelerate>=0.33
+pillow>=10.0
+numpy>=1.26
+opencv-python-headless>=4.9
+scikit-learn>=1.4
+matplotlib>=3.8
+pytest>=8.0
